@@ -1,0 +1,16 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --primary-200: #F4F1FD;
+  --text-color: #20374B;
+  --text-light-color: #5A6D80;
+  --text-primary-color: #6B46EF;
+  --background-content-color: #ffffff;
+  --background-secondary-hover-color: #F2F5F7;
+  --background-secondary-active-color: #E6ECEF;
+}
+
+html body * {
+  font-family: "Roboto", sans-serif;
+}
