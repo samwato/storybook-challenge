@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>
 export const Base: Story = {
   args: {
     name: 'Jane Doe',
-    thumbnail: thumbnail,
+    thumbnailSrc: thumbnail,
     email: 'jane@hotmail.com',
   },
 }

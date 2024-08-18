@@ -6,7 +6,7 @@ interface IContactListItemProps {
   enabled?: boolean
   name: string
   showEmail?: boolean
-  thumbnail: string
+  thumbnailSrc: string
 }
 
 export function ContactListItem({
@@ -14,13 +14,13 @@ export function ContactListItem({
   enabled = false,
   name,
   showEmail = false,
-  thumbnail,
+  thumbnailSrc,
 }: IContactListItemProps) {
   return (
     <li className={styles.list_item} data-enabled={enabled}>
       <img
         className={styles.thumbnail}
-        src={thumbnail}
+        src={thumbnailSrc}
         alt="Contact Thumbnail"
       />
       <div className={styles.content}>
