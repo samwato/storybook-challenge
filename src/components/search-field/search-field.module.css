@@ -1,0 +1,20 @@
+.input {
+    background-image: url('../assets/search-icon.svg');
+    background-position: 8px 14px;
+    background-repeat: no-repeat;
+    border: none;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    padding: 8px 16px 8px 36px;
+    height: 48px;
+    width: 100%;
+}
+
+.input::placeholder {
+    color: var(--text-placeholder-color);
+    opacity: 1;
+}
+
