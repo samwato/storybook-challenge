@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ContactListItem } from './contact-list-item'
-import thumbnail from '../assets/contact-list-item-thumbnail.jpg'
+import { ContactListItem } from '../components/contact-list-item'
+import thumbnail from '../components/assets/contact-list-item-thumbnail.jpg'
 
 const meta = {
   title: 'Contact List Item',
