@@ -9,6 +9,7 @@
 
 .list_item:hover {
     background-color: var(--background-secondary-hover-color);
+    cursor: pointer;
 }
 
 .list_item:active {

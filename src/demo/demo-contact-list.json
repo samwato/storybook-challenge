@@ -3,70 +3,70 @@
     "id": "1",
     "name": "Dianne Russell",
     "email": "jane@hotmail.com",
-    "hadAttended": true,
+    "had_attended": true,
     "thumbnail_src": "/dianne-russell.png"
   },
   {
     "id": "2",
     "name": "Ronald Richards",
     "email": "jane@hotmail.com",
-    "hadAttended": true,
+    "had_attended": true,
     "thumbnail_src": "/ronald-richards.png"
   },
   {
     "id": "3",
     "name": "Arlene McCoy",
     "email": "jane@hotmail.com",
-    "hadAttended": true,
+    "had_attended": true,
     "thumbnail_src": "/arlene-mccoy.png"
   },
   {
     "id": "4",
     "name": "Kathryn Murphy",
     "email": "jane@hotmail.com",
-    "hadAttended": true,
+    "had_attended": true,
     "thumbnail_src": "/kathryn-murphy.png"
   },
   {
     "id": "5",
     "name": "Savannah Nguyen",
     "email": "jane@hotmail.com",
-    "hadAttended": true,
+    "had_attended": true,
     "thumbnail_src": "/savannah-nguyen.png"
   },
   {
     "id": "6",
     "name": "Albert Flores",
     "email": "jane@hotmail.com",
-    "hadAttended": true,
+    "had_attended": true,
     "thumbnail_src": "/albert-flores.png"
   },
   {
     "id": "7",
     "name": "Jenny Wilson",
     "email": "jane@hotmail.com",
-    "hadAttended": false,
+    "had_attended": false,
     "thumbnail_src": "/jenny-wilson.png"
   },
   {
     "id": "8",
     "name": "Wade Warren",
     "email": "jane@hotmail.com",
-    "hadAttended": false,
+    "had_attended": false,
     "thumbnail_src": "/wade-warren.png"
   },
   {
     "id": "9",
     "name": "Bessie Cooper",
     "email": "jane@hotmail.com",
-    "hadAttended": false,
+    "had_attended": false,
     "thumbnail_src": "/bessie-cooper.png"
   },
   {
     "id": "10",
     "name": "Ralph Edwards",
     "email": "jane@hotmail.com",
-    "hadAttended": false,
+    "had_attended": false,
     "thumbnail_src": "/ralph-edwards.png"
   }
 ]
