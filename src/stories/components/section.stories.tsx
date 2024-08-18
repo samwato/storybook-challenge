@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Section, SectionHeader, SectionContent } from '../components/section'
+import { Section, SectionHeader, SectionContent } from '@/components/section'
 
 const meta: Meta<typeof Section> = {
-  title: 'Section',
+  title: 'Components/Section',
   component: Section,
   tags: ['autodocs'],
 }

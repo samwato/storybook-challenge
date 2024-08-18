@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ContactListItem } from '../components/contact-list-item'
-import thumbnail from '../components/assets/contact-list-item-thumbnail.jpg'
+import { ContactListItem } from '@/components/contact-list-item'
+import thumbnail from '@/components/assets/contact-list-item-thumbnail.jpg'
 
 const meta = {
-  title: 'Contact List Item',
+  title: 'Components/Contact List Item',
   component: ContactListItem,
   tags: ['autodocs'],
 } satisfies Meta<typeof ContactListItem>
