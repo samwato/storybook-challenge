@@ -1,7 +1,6 @@
 .header {
     align-items: center;
     border-top: 1px solid var(--border-medium-color);
-    border-bottom: 1px solid var(--border-medium-color);
     color: var(--text-light-color);
     display: flex;
     font-weight: 500;
@@ -18,4 +17,5 @@
 
 .content {
     padding: 12px 8px;
+    border-top: 1px solid var(--border-medium-color);
 }
