@@ -10,6 +10,7 @@
   --background-content-color: #ffffff;
   --background-secondary-hover-color: #F2F5F7;
   --background-secondary-active-color: #E6ECEF;
+  --border-medium-color: #E4E5E8
 }
 
 html body * {
