@@ -1,0 +1,32 @@
+import { type ReactNode } from 'react'
+import styles from './section.module.css'
+import chevronRight from '../assets/chevron-right.svg'
+import chevronDown from '../assets/chevron-down.svg'
+import { useSection } from './section-context.tsx'
+
+interface ISectionHeaderProps {
+  children: ReactNode
+}
+
+export function SectionHeader({ children }: ISectionHeaderProps) {
+  const { expanded, toggleExpanded, ids } = useSection()
+
+  return (
+    <div
+      id={ids.header}
+      aria-controls={ids.content}
+      aria-expanded={expanded}
+      role="button"
+      className={styles.header}
+      onClick={toggleExpanded}
+    >
+      {children}
+      <img
+        alt=""
+        src={expanded ? chevronDown : chevronRight}
+        width="20"
+        height="20"
+      />
+    </div>
+  )
+}
