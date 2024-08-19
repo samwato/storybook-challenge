@@ -7,7 +7,7 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 import react from 'eslint-plugin-react'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['build'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
