@@ -16,7 +16,7 @@
     background-color: var(--background-secondary-active-color);
 }
 
-.thumbnail {
+.avatar {
     border-radius: 50%;
     height: 36px;
     width: 36px;
@@ -27,24 +27,24 @@
     flex-direction: column;
 }
 
-.name {
+.heading {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     color: var(--text-color);
 }
 
-.name_enabled {
+.heading_selected {
     color: var(--text-primary-color);
 }
 
-.email {
+.sub_heading {
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
     color: var(--text-light-color);
 }
 
-.list_item[data-enabled="true"], .list_item[data-enabled="true"]:hover, .list_item[data-enabled="true"]:active {
+.list_item[data-selected="true"], .list_item[data-selected="true"]:hover, .list_item[data-selected="true"]:active {
     background-color: var(--primary-200);
 }

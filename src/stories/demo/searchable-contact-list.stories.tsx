@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Demo } from '@/demo/demo.tsx'
+import { SearchableContactList } from '@/demo/searchable-contact-list.tsx'
 
 const meta = {
-  title: 'Demo/Searchable List',
-  component: Demo,
-} satisfies Meta<typeof Demo>
+  title: 'Demo/Searchable Contact List',
+  component: SearchableContactList,
+} satisfies Meta<typeof SearchableContactList>
 
 export default meta
 type Story = StoryObj<typeof meta>
