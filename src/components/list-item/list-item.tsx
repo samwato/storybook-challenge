@@ -2,7 +2,7 @@ import { type KeyboardEventHandler, useCallback } from 'react'
 import styles from './list-item.module.css'
 import { cls } from '../../utils/styles.ts'
 
-interface IListItemProps {
+export interface IListItemProps {
   avatarSrc: string
   selected?: boolean
   heading: string
@@ -44,7 +44,6 @@ export function ListItem({
       data-selected={selected}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      role="listitem"
       tabIndex={0}
     >
       <img className={styles.avatar} src={avatarSrc} alt="Avatar" />

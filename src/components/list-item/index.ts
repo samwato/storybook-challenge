@@ -1,1 +1,1 @@
-export { ListItem } from './list-item.tsx'
+export { ListItem, type IListItemProps } from './list-item.tsx'
