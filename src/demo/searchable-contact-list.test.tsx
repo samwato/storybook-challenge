@@ -77,9 +77,12 @@ describe('SearchableContactList', () => {
     const [firstContactItem] = screen.getAllByRole('listitem')
     await user.click(firstContactItem)
 
-    expect(mockOnSelectionChange).toHaveBeenCalledWith(
+    expect(mockOnSelectionChange).toHaveBeenLastCalledWith(
       new Set([mockContactList[0].id]),
     )
+
+    await user.click(firstContactItem)
+    expect(mockOnSelectionChange).toHaveBeenLastCalledWith(new Set([]))
   })
 
   test('Keyboard navigation', async () => {

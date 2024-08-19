@@ -14,6 +14,7 @@ export function SectionHeader({ children }: ISectionHeaderProps) {
   const handleKeyDown = useCallback<KeyboardEventHandler<HTMLElement>>(
     (event) => {
       if (event.key === ' ' || event.key === 'Enter') {
+        event.preventDefault()
         toggleExpanded()
       }
     },

@@ -34,6 +34,22 @@ describe('ListItem', () => {
     expect(mockOnSelect).toHaveBeenCalledTimes(1)
   })
 
+  test('Sub heading shows when enabled', () => {
+    render(<ListItem {...mockProps} showSubHeading />, { wrapper })
+
+    expect(screen.getByText(mockProps.subHeading)).toBeInTheDocument()
+  })
+
+  test.each<[Partial<IListItemProps>, string]>([
+    [{ selected: true }, 'heading heading_highlight'],
+    [{ selected: true, showSubHeading: true }, 'heading'],
+  ])('Correct classes are applied', async (props, classes) => {
+    render(<ListItem {...mockProps} {...props} />, { wrapper })
+
+    const heading = screen.getByText(mockProps.heading)
+    expect(heading).toHaveClass(classes)
+  })
+
   test('Keyboard navigation', async () => {
     const user = userEvent.setup()
     render(<ListItem {...mockProps} />, { wrapper })
@@ -49,12 +65,6 @@ describe('ListItem', () => {
     await user.keyboard('[Space]')
     expect(mockOnSelect).toHaveBeenCalledTimes(2)
     expect(mockOnSelect).toHaveBeenLastCalledWith(mockProps.id)
-  })
-
-  test('Sub heading shows when enabled', () => {
-    render(<ListItem {...mockProps} showSubHeading />, { wrapper })
-
-    expect(screen.getByText(mockProps.subHeading)).toBeInTheDocument()
   })
 
   test('Accessibility', async () => {
