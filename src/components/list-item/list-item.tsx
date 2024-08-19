@@ -52,7 +52,7 @@ export function ListItem({
         <span
           className={
             selected && !showSubHeading
-              ? cls(styles.heading, styles.heading_highlight)
+              ? cls(styles.heading, styles.heading_selected)
               : styles.heading
           }
         >
