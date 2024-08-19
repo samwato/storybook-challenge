@@ -47,7 +47,7 @@ describe('ListItem', () => {
    * then testing for `aria-selected` attribute might have been better suited.
    */
   test.each<[Partial<IListItemProps>, string]>([
-    [{ selected: true }, 'heading heading_highlight'],
+    [{ selected: true }, 'heading heading_selected'],
     [{ selected: true, showSubHeading: true }, 'heading'],
   ])('Correct classes are applied', async (props, classes) => {
     render(<ListItem {...mockProps} {...props} />, { wrapper })

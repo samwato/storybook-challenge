@@ -14,3 +14,9 @@ To run the storybook, run the following command:
 pnpm storybook:dev
 ```
 Note in the terminal the url to access the storybook.
+
+## Run Tests
+To run the tests, run the following command:
+```sh
+pnpm test
+```
