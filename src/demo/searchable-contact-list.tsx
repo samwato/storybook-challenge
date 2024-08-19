@@ -1,21 +1,29 @@
 import { useState } from 'react'
 import { SearchField, useSearch } from '@/components/search-field'
 import { Section, SectionHeader, SectionContent } from '@/components/section'
-import { ListItem } from '../components/list-item'
+import { List, ListItem } from '@/components/list-item'
 
-/** --- IMPLEMENTATION DETAIL --- */
-import contactList from './contact-list.json'
-/** ---------------------------- */
+interface ISearchableContactListProps {
+  contactList: {
+    id: string
+    email: string
+    name: string
+    had_attended: boolean
+    thumbnail_src: string
+  }[]
+  onSelectionChange?: (selectionContactIds: Set<string>) => void
+  showAllEmails: boolean
+}
 
 /**
  * This component is only for demo purposes.
- * props are used to help visualize in storybook and may not be need in real world feature.
+ * props are only used to help visualize in storybook and test.
  */
 export function SearchableContactList({
+  contactList,
+  onSelectionChange,
   showAllEmails,
-}: {
-  showAllEmails: boolean
-}) {
+}: ISearchableContactListProps) {
   const [selectionContactIds, setSelectionContactIds] = useState<Set<string>>(
     new Set(),
   )
@@ -42,7 +50,9 @@ export function SearchableContactList({
       } else {
         prevIds.add(contactId)
       }
-      return new Set(prevIds)
+      const newSelectionContactids = new Set(prevIds)
+      onSelectionChange?.(newSelectionContactids)
+      return newSelectionContactids
     })
   }
 
@@ -52,7 +62,7 @@ export function SearchableContactList({
       id={contact.id}
       avatarSrc={contact.thumbnail_src}
       heading={contact.name}
-      onClick={handleContactSelection}
+      onSelect={handleContactSelection}
       selected={selectionContactIds.has(contact.id)}
       subHeading={contact.email}
       showSubHeading={showAllEmails}
@@ -61,17 +71,22 @@ export function SearchableContactList({
 
   return (
     <div style={{ maxWidth: '400px' }}>
-      <SearchField value={search} onChange={handleSearchChange} />
+      <SearchField
+        aria-label="Search Contacts"
+        placeholder="Search"
+        value={search}
+        onChange={handleSearchChange}
+      />
       <Section initExpanded>
         <SectionHeader>Attended</SectionHeader>
         <SectionContent>
-          {attendedContactList.map(renderContactListItems)}
+          <List>{attendedContactList.map(renderContactListItems)}</List>
         </SectionContent>
       </Section>
       <Section initExpanded>
         <SectionHeader>Absent</SectionHeader>
         <SectionContent>
-          {absentContactList.map(renderContactListItems)}
+          <List>{absentContactList.map(renderContactListItems)}</List>
         </SectionContent>
       </Section>
     </div>

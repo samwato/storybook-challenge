@@ -1,5 +1,5 @@
 import { type KeyboardEventHandler, useCallback } from 'react'
-import styles from './list-item.module.css'
+import styles from './list.module.css'
 import { cls } from '../../utils/styles.ts'
 
 export interface IListItemProps {
@@ -7,7 +7,7 @@ export interface IListItemProps {
   selected?: boolean
   heading: string
   id: string
-  onClick?: (id: string) => void
+  onSelect?: (id: string) => void
   showSubHeading?: boolean
   subHeading: string
 }
@@ -21,21 +21,22 @@ export function ListItem({
   selected = false,
   heading,
   id,
-  onClick,
+  onSelect,
   showSubHeading = false,
   subHeading,
 }: IListItemProps) {
   const handleClick = useCallback(() => {
-    onClick?.(id)
-  }, [id, onClick])
+    onSelect?.(id)
+  }, [id, onSelect])
 
   const handleKeyDown = useCallback<KeyboardEventHandler<HTMLElement>>(
     (event) => {
       if (event.key === ' ' || event.key === 'Enter') {
-        onClick?.(id)
+        event.preventDefault()
+        onSelect?.(id)
       }
     },
-    [id, onClick],
+    [id, onSelect],
   )
 
   return (

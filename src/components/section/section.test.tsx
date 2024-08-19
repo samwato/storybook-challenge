@@ -26,6 +26,24 @@ describe('Section', () => {
     expect(content).not.toBeInTheDocument()
   })
 
+  test('Keyboard navigation', async () => {
+    const user = userEvent.setup()
+    render(<TestComponent />)
+
+    const content = screen.getByText('Content')
+    expect(content).toBeInTheDocument()
+
+    const header = screen.getByRole('button', { name: 'Header' })
+    await user.tab()
+    expect(header).toHaveFocus()
+    await user.keyboard('[Enter]')
+
+    expect(content).not.toBeInTheDocument()
+
+    await user.keyboard('[Space]')
+    expect(screen.getByText('Content')).toBeInTheDocument()
+  })
+
   test('Accessibility', async () => {
     const { container } = render(<TestComponent />)
     const results = await axe(container)

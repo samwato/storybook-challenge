@@ -7,7 +7,9 @@ pnpm dlx storybook@latest init
 ```
 
 ## TODO List:
+- [ ] JSDoc, auto populates storybook descriptions
+- [ ] Fix accessibility on all components. (SearchField focus, etc...)
 - [ ] Tests
 - [ ] Axe tests
-- [ ] CSS Transitions
-- [ ] JSDoc
+- [ ] Check Responsive design
+- [ ] Check Cross browser testing
