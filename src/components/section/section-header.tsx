@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react'
+import { type KeyboardEventHandler, type ReactNode, useCallback } from 'react'
 import styles from './section.module.css'
 import chevronRight from '../assets/chevron-right.svg'
 import chevronDown from '../assets/chevron-down.svg'
@@ -11,6 +11,15 @@ interface ISectionHeaderProps {
 export function SectionHeader({ children }: ISectionHeaderProps) {
   const { expanded, toggleExpanded, ids } = useSection()
 
+  const handleKeyDown = useCallback<KeyboardEventHandler<HTMLElement>>(
+    (event) => {
+      if (event.key === ' ' || event.key === 'Enter') {
+        toggleExpanded()
+      }
+    },
+    [toggleExpanded],
+  )
+
   return (
     <div
       id={ids.header}
@@ -19,6 +28,8 @@ export function SectionHeader({ children }: ISectionHeaderProps) {
       role="button"
       className={styles.header}
       onClick={toggleExpanded}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
     >
       {children}
       <img

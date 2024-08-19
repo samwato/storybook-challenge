@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { type KeyboardEventHandler, useCallback } from 'react'
 import styles from './list-item.module.css'
 import { cls } from '../../utils/styles.ts'
 
@@ -29,11 +29,22 @@ export function ListItem({
     onClick?.(id)
   }, [id, onClick])
 
+  const handleKeyDown = useCallback<KeyboardEventHandler<HTMLElement>>(
+    (event) => {
+      if (event.key === ' ' || event.key === 'Enter') {
+        onClick?.(id)
+      }
+    },
+    [id, onClick],
+  )
+
   return (
     <li
       className={styles.list_item}
       data-selected={selected}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
     >
       <img className={styles.avatar} src={avatarSrc} alt="Avatar" />
       <div className={styles.content}>
