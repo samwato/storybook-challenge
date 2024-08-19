@@ -1,15 +1,16 @@
 # Storybook Challenge
 
-This project was initialized with:
-
+## Setup
+This repo has been tested with the node version in `.nvmrc`
+To setup the project, run the following commands:
 ```sh
-pnpm dlx storybook@latest init
+nvm use # If you have nvm installed
+pnpm install
 ```
 
-## TODO List:
-- [ ] JSDoc, auto populates storybook descriptions
-- [ ] Fix accessibility on all components. (SearchField focus, etc...)
-- [ ] Tests
-- [ ] Axe tests
-- [ ] Check Responsive design
-- [ ] Check Cross browser testing
+## Run Storybook
+To run the storybook, run the following command:
+```sh
+pnpm storybook:dev
+```
+Note in the terminal the url to access the storybook.

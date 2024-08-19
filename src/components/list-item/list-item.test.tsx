@@ -40,6 +40,12 @@ describe('ListItem', () => {
     expect(screen.getByText(mockProps.subHeading)).toBeInTheDocument()
   })
 
+  /**
+   * I don't like testing for classes, but I'm guessing that these contact items
+   * are meant to be "selectable". I will keep them as just list item for now.
+   * But another options could have been to make them have a role of `option` for a `listbox` component,
+   * then testing for `aria-selected` attribute might have been better suited.
+   */
   test.each<[Partial<IListItemProps>, string]>([
     [{ selected: true }, 'heading heading_highlight'],
     [{ selected: true, showSubHeading: true }, 'heading'],
