@@ -1,25 +1,27 @@
 import { useState } from 'react'
-import { SearchField } from '@/components/search-field'
+import { SearchField, useSearch } from '@/components/search-field'
 import { Section, SectionHeader, SectionContent } from '@/components/section'
 import { ContactListItem } from '@/components/contact-list-item'
-import { useSearchContacts } from './use-search-contacts.ts'
+
+/** --- IMPLEMENTATION DETAIL --- */
+import contactList from './demo-contact-list.json'
+/** ---------------------------- */
 
 /**
- * This component is only for demo purposes
+ * This component is only for demo purposes.
+ * props are used to help visualize in storybook and may not be need in real world feature.
  */
-export function SearchableList({
-  showAllEmails = false,
-}: {
-  showAllEmails?: boolean
-}) {
+export function Demo({ showAllEmails }: { showAllEmails: boolean }) {
   const [selectionIds, setSelectionIds] = useState<Set<string>>(new Set())
-  const { search, handleSearchChange, filteredContactList } =
-    useSearchContacts()
 
-  const attendedContactList = filteredContactList.filter(
+  const { search, handleSearchChange, filteredList } = useSearch(contactList, {
+    valueGetter: (contact) => contact.name,
+  })
+
+  const attendedContactList = filteredList.filter(
     (contact) => contact.had_attended,
   )
-  const absentContactList = filteredContactList.filter(
+  const absentContactList = filteredList.filter(
     (contact) => !contact.had_attended,
   )
 
@@ -37,7 +39,7 @@ export function SearchableList({
   return (
     <div style={{ maxWidth: '400px' }}>
       <SearchField value={search} onChange={handleSearchChange} />
-      <Section initExpanded={true}>
+      <Section initExpanded>
         <SectionHeader>Attended</SectionHeader>
         <SectionContent>
           {attendedContactList.map((contact) => (
@@ -54,7 +56,7 @@ export function SearchableList({
           ))}
         </SectionContent>
       </Section>
-      <Section initExpanded={true}>
+      <Section initExpanded>
         <SectionHeader>Absent</SectionHeader>
         <SectionContent>
           {absentContactList.map((contact) => (
